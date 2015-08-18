@@ -8,8 +8,8 @@ module.exports = {
   // jsのビルド設定
   js: {
     src: src + '/js/**',
-    dest: dest + '/js',
-    uglify: false
+    dest: dest + '/js'
+    // uglify: false
   },
 
   // webpackの設定
@@ -23,13 +23,9 @@ module.exports = {
     resolve: {
       extensions: ['', '.js']
     },
-    module: {  // ここを追記
+    module: {
       loaders: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader'
-        }
+        { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"}
       ]
     }
   }
